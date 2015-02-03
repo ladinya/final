@@ -1,0 +1,11 @@
+<h1> National Parks</h1>
+
+<p><a href="/final/new" class="btn btn-primary">New Parks</a></p>
+
+<table class="table">
+<% @park.each do |park| %>
+<tr>
+   <td><a href="/final/<%= park.id %>"> <%= park.name %></a></td>
+</tr>
+<% end %>
+</table>

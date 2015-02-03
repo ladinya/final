@@ -1,0 +1,10 @@
+<h1> <%= @park.name %></h1>
+
+<p> State: <%= @park.state %></p>
+<p> Country: <%= @park.country%></p>
+<p> Rating: <%= @park.rating %></p>
+<p> Summary: <%= @park.summary %></p>
+
+<%= @features.each do |feature| %>
+  <p><%= feature.activity%></p>
+<% end%>
