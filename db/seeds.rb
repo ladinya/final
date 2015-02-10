@@ -5,14 +5,21 @@ Park_feature.delete_all
 Feature.delete_all
 User.delete_all
 Review.delete_all
+Airport.delete_all
+
+
+puts "Creating airports..."
+slc = Airport.create(name: "SLC") 
+jac = Airport.create(name: "JAC")
+sfo = Airport.create(name: "SFO")
 
 # Create the movies
 puts "Creating parks..."
-arches = Park.create(name: "Arches", state: "Utah", country: "US", rating: "5", summary: "A landscape of contrasting colors, landforms and textures")
-bryce_canyon = Park.create(name: "Bryce Canyon", state: "Utah", country: "US", rating: "4", summary: "Archetypal hoodoo_iferous terrain")
-yellowstone = Park.create(name: "Yellowstone", state: "Wyoming", country: "US", rating: "5", summary: "Best park")
-yosemite = Park.create(name: "Yosemite", state: "California", country: "US", rating: "4", summary: "World Heritage Site")
-sequoia = Park.create(name: "Sequoia", state: "California", country: "US", rating: "4", summary: "Giant sequoia trees")
+arches = Park.create(airport_id: slc.id, name: "Arches", state: "Utah", country: "US", rating: "5", image: "arches.jpg", summary: "A landscape of contrasting colors, landforms and textures")
+bryce_canyon = Park.create(airport_id: slc.id, name: "Bryce Canyon", state: "Utah", country: "US", rating: "4", image: "bryce.jpg", summary: "Archetypal hoodoo_iferous terrain")
+yellowstone = Park.create(airport_id: jac.id, name: "Yellowstone", state: "Wyoming", country: "US", rating: "5", image: "yellowstone.jpg", summary: "Best park")
+yosemite = Park.create(airport_id: sfo.id, name: "Yosemite", state: "California", country: "US", rating: "4", image: "yosemite.jpg", summary: "World Heritage Site")
+sequoia = Park.create(airport_id: sfo.id, name: "Sequoia", state: "California", country: "US", rating: "4", image: "sequoia.jpg", summary: "Giant sequoia trees")
 
 
 # Create the features

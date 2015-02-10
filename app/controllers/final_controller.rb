@@ -1,7 +1,7 @@
 class FinalController < ApplicationController
 
   def index
-     @park = Park.all
+     @parks = Park.all
   end
 
   def show
@@ -11,7 +11,13 @@ class FinalController < ApplicationController
      @park_features.each do |park_feature|
      @features << Feature.find_by(id: park_feature.feature_id)
   end
+
+  def new
+    @park = Park.new
+  end
+
 end
 
   
 end
+

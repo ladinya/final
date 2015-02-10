@@ -1,0 +1,13 @@
+<%= form_for @feature do |form| %>
+  <div class="form-group">
+    <%= form.label :activity %>
+    <%= form.text_field :activity, class: "form-control" %>
+  </div>
+  <%= form.button 'Update Feature', class: "btn btn-success" %>
+<% end %>
+
+<ul>
+ <%= @features.each do |feature| %>
+ <li><%= feature.activity %> <%= link_to "Edit",edit_feature_path(feature) %> <%= link_to "Delete", feature_path(feature), method: :delete, data: (confirm:'Are you sure?') %></li>
+<% end %>
+</ul>
