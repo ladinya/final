@@ -4,6 +4,11 @@ class FeaturesController < ApplicationController
     @features = Feature.all
   end
 
+  def show
+    @feature = Feature.find_by(id: params["id"])
+    @park_features = @feature.park_features  
+  end
+
   def new
     @feature = Feature.new
   end
@@ -15,18 +20,18 @@ class FeaturesController < ApplicationController
   end
 
   def edit
-    @feature = Feature.find_by (id: params["id"])
+    @feature = Feature.find_by(id: params["id"])
   end
 
   def update
     feature_params = params.required(:feature).permit(:activity)
-    @feature = Feature.find_by (id: params["id"])
+    @feature = Feature.find_by(id: params["id"])
     @feature.update(feature_params)
     redirect_to features_path
   end
 
   def destroy
-    @feature = Feature.find_by (id: params["id"])
+    @feature = Feature.find_by(id: params["id"])
     @feature.destroy
     redirect_to features_path
   end
