@@ -17,7 +17,7 @@ class FinalController < ApplicationController
     park_params = params.require(:park).permit!
     @park = Park.new (park_params)
      if @park.save
-    redirect_to parks_path
+    redirect_to final_path
     else
     render text:"FAIL"
     end
@@ -32,7 +32,7 @@ class FinalController < ApplicationController
     @park = Park.find_by(id: params["id"])
     @park.update(park_params)
     if @park.valid?
-    redirect_to parks_path
+    redirect_to final_path
     else
     render text:"FAIL"
     end
@@ -41,7 +41,7 @@ class FinalController < ApplicationController
   def destroy
     @park = Park.find_by(id: params["id"])
     @park.destroy
-    redirect_to parks_path
+    redirect_to final_path
   end
 
 end
