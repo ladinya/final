@@ -1,23 +1,33 @@
-<form action="/parks" method="POST">
+<%= form_for @park do |form| %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder:"Enter the name of the park" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :image %>
+    <%= form.text_field :image, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= form.label :state %>
+    <%= form.text_field :state, class: "form-control", placeholder:"Enter the state of the park" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :country %>
+    <%= form.text_field :country, class: "form-control", placeholder:"Enter the country of the park" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :rating %>
+    <%= form.text_field :rating, class: "form-control" %>
+  </div>
  <div class="form-group">
-  <label for="name"> Name of the Park </label>
-  <input type="text" class="form-control" id="name" placeholder="Enter the name of the park">
+    <%= form.label :summary %>
+    <%= form.text_area :summary, class: "form-control", rows: 5 %>
   </div>
-  <div class="form-group">
-  <label for="state"> State </label>
-  <input type="text" class="form-control" id="state" placeholder="Which state does it belong to?">
+   <div class="form-group">
+    <%= form.label :airport_id %>
+    <%= form.collection_select :airport_ids, Airport.order(:name), :id, :name, class: "form-control" %>
   </div>
-  <div class="form-group">
-  <label for="country"> Country </label>
-  <input type="text" class="form-control" id="country" placeholder="Which country does it belong to?">
-  </div>
-  <div class="form-group">
-  <label for="rating"> Rating </label>
-  <input type="text" class="form-control" id="rating" placeholder="What's your rating for the park?">
-  </div>
-  <div class="form-group">
-  <label for="summary"> Summary </label>
-  <input type="text" class="form-control" id="summary" placeholder="What's it about?">
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+
+   <%= form.button 'Create Park', class: "btn btn-success" %>
+
+<% end %>
