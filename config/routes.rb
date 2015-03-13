@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
 
-  resources :final
+  resources :parks do
+    resources :reviews
+  end
   resources :features
+  resources :parkfeatures
+  resources :users
+  resources :sessions
 
-  get '/final/:id', to: 'final#index'
+  get "/login", to: "sessions#new"
+  get "/logout", to: "sessions#destroy"
+  root to: "parks#index"
 
 end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

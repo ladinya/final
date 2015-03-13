@@ -25,7 +25,7 @@
   </div>
    <div class="form-group">
     <%= form.label :airport_id %>
-    <%= form.collection_select :airport_ids, Airport.order(:name), :id, :name, class: "form-control" %>
+    <%= form.collection_select :airport_id, Airport.order(:name), :id, :name, class: "form-control" %>
   </div>
 
    <%= form.button 'Create Park', class: "btn btn-success" %>

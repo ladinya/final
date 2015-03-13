@@ -1,0 +1,30 @@
+<% if @park.errors.any? %>
+  <div class="alert alert-warning">
+    <h2>Some errors kept this park from being saved:</h2>
+    <ul>
+      <% @park.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @park do |form| %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= form.label :image %>
+    <%= form.text_field :image, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :summary %>
+    <%= form.text_area :summary, class: "form-control", rows: 5 %>
+  </div>
+  <div class="form-group">
+    <%= form.label :rating %>
+    <%= form.text_field :rating, class: "form-control" %>
+  </div>
+  <%= form.button 'Create Park', class: "btn btn-success" %>
+<% end %>

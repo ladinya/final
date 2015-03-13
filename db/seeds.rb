@@ -1,11 +1,13 @@
 # Deletes everything from the database so that you start fresh
 puts "Deleting all records from the database..."
 Park.delete_all
-Park_feature.delete_all
+Parkfeature.delete_all
 Feature.delete_all
 User.delete_all
 Review.delete_all
 Airport.delete_all
+
+User.create(name: "Susan", email: "susan.zhailin@gmail.com", password: "1234")
 
 
 puts "Creating airports..."
@@ -31,38 +33,38 @@ fishing = Feature.create(activity: "Fishing")
 sightseeing = Feature.create(activity: "Sightseeing")
 skiing = Feature.create(activity: "Skiing")
 
-puts "Creating park_features..."
+puts "Creating parkfeatures..."
 
 # Create the roles for Arches
-Park_feature.create(park_id: arches.id, feature_id: hiking.id)
-Park_feature.create(park_id: arches.id, feature_id: camping.id)
-Park_feature.create(park_id: arches.id, feature_id: sightseeing.id)
+Parkfeature.create(park_id: arches.id, feature_id: hiking.id)
+Parkfeature.create(park_id: arches.id, feature_id: camping.id)
+Parkfeature.create(park_id: arches.id, feature_id: sightseeing.id)
 
 # Create the roles for Bryce Canyon
-Park_feature.create(park_id: bryce_canyon.id, feature_id: hiking.id)
-Park_feature.create(park_id: bryce_canyon.id, feature_id: camping.id)
-Park_feature.create(park_id: bryce_canyon.id, feature_id: sightseeing.id)
+Parkfeature.create(park_id: bryce_canyon.id, feature_id: hiking.id)
+Parkfeature.create(park_id: bryce_canyon.id, feature_id: camping.id)
+Parkfeature.create(park_id: bryce_canyon.id, feature_id: sightseeing.id)
 
 # Create the roles for Yellowstone
-Park_feature.create(park_id: yellowstone.id, feature_id: hiking.id)
-Park_feature.create(park_id: yellowstone.id, feature_id: camping.id)
-Park_feature.create(park_id: yellowstone.id, feature_id: boating.id)
-Park_feature.create(park_id: yellowstone.id, feature_id: fishing.id)
-Park_feature.create(park_id: yellowstone.id, feature_id: sightseeing.id)
+Parkfeature.create(park_id: yellowstone.id, feature_id: hiking.id)
+Parkfeature.create(park_id: yellowstone.id, feature_id: camping.id)
+Parkfeature.create(park_id: yellowstone.id, feature_id: boating.id)
+Parkfeature.create(park_id: yellowstone.id, feature_id: fishing.id)
+Parkfeature.create(park_id: yellowstone.id, feature_id: sightseeing.id)
 
 # Create the roles for Yosemite
-Park_feature.create(park_id: yosemite.id, feature_id: hiking.id)
-Park_feature.create(park_id: yosemite.id, feature_id: camping.id)
-Park_feature.create(park_id: yosemite.id, feature_id: sightseeing.id)
-Park_feature.create(park_id: yosemite.id, feature_id: skiing.id)
+Parkfeature.create(park_id: yosemite.id, feature_id: hiking.id)
+Parkfeature.create(park_id: yosemite.id, feature_id: camping.id)
+Parkfeature.create(park_id: yosemite.id, feature_id: sightseeing.id)
+Parkfeature.create(park_id: yosemite.id, feature_id: skiing.id)
 
 # Create the roles for Sequoia
-Park_feature.create(park_id: sequoia.id, feature_id: hiking.id)
-Park_feature.create(park_id: sequoia.id, feature_id: camping.id)
-Park_feature.create(park_id: sequoia.id, feature_id: sightseeing.id)
+Parkfeature.create(park_id: sequoia.id, feature_id: hiking.id)
+Parkfeature.create(park_id: sequoia.id, feature_id: camping.id)
+Parkfeature.create(park_id: sequoia.id, feature_id: sightseeing.id)
 
 
-puts "There are now #{Park.count} parks, #{Feature.count} features, and #{Park_feature.count} park_features in the database."
+puts "There are now #{Park.count} parks, #{Feature.count} features, and #{Parkfeature.count} parkfeatures in the database."
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #

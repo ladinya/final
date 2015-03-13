@@ -6,8 +6,10 @@ Park:
   rating: integer
   summary: text
   airport_id: integer
+  created_at: datetime
+  updated_at: datetime
   
-Park_feature:
+Parkfeature:
   park_id: integer
   feature_id: integer
 
@@ -19,7 +21,7 @@ Airport:
 
 User:
   email: string
-  password: string
+  password_digest: string
   name: string
 
 Review:
